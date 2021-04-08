@@ -20,11 +20,15 @@ TOKEN = '1769553533:AAG6EI51jUJHwAVvYa12iXER7jRniQF_nNM'
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
     """Send a message when the command /start is issued."""
-    update.message.reply_text('Hi!')
-
+    update.message.reply_text('ECEbot at yoir service. Use / followed by sub name')
+    
+def math(update, context):
+    """Send a message when the command /start is issued."""
+    update.message.reply_text('http://imgur.com/a/VQkmm2U')
+    
 def help(update, context):
     """Send a message when the command /help is issued."""
-    update.message.reply_text('Help!')
+    update.message.reply_text('Contact Vikram!')
 
 def echo(update, context):
     """Echo the user message."""
@@ -47,6 +51,7 @@ def main():
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("math", math))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
