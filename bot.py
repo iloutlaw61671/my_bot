@@ -37,7 +37,7 @@ def timenow(update, context):
     
 def morning(context:CallbackConext):
     message="good morning"
-    context.bot.send_message(chad_id=888117682,text=message)
+    context.bot.send_message(chad_id='888117682',text=message)
     
 def math(update, context):
     """Send a message when the command /math is issued."""
