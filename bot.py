@@ -11,12 +11,14 @@ import pytz
 PORT = int(os.environ.get('PORT', 80))
 
 
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
 logger = logging.getLogger(__name__)
 TOKEN = '1769553533:AAG6EI51jUJHwAVvYa12iXER7jRniQF_nNM'
+j=updater.job_queue
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -32,6 +34,10 @@ def timenow(update, context):
     current_time = your_now.strftime("%H:%M:%S")
     
     update.message.reply_text(current_time)    
+    
+def morning(context:CallbackConext):
+    message="good morning"
+    context.bot.send_message(chad_id='888117682',text=message)
     
 def math(update, context):
     """Send a message when the command /math is issued."""
@@ -64,6 +70,7 @@ def main():
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("math", math))
     dp.add_handler(CommandHandler("timenow", timenow))
+    job_daily=j.run_daily(daily_suggestion,days=(0,1,2,3,4,5,6),time=datetime.time(hour=14,minute=30,second=00))
 
 
     # on noncommand i.e message - echo the message on Telegram
