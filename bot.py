@@ -3,11 +3,12 @@
 
 # In[ ]:
 
-
+from datetime import datetime
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
 PORT = int(os.environ.get('PORT', 80))
+
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -22,8 +23,14 @@ def start(update, context):
     """Send a message when the command /start is issued."""
     update.message.reply_text('ECEbot at your service. Use / followed by sub name')
     
+def timenow(update, context):
+    """Send a message when the command /timenow is issued."""
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    update.message.reply_text(current_time)    
+    
 def math(update, context):
-    """Send a message when the command /start is issued."""
+    """Send a message when the command /math is issued."""
     update.message.reply_text('http://imgur.com/a/VQkmm2U')
     
 def help(update, context):
@@ -52,6 +59,8 @@ def main():
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("math", math))
+    dp.add_handler(CommandHandler("timenow", timenow))
+
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
