@@ -35,9 +35,9 @@ def timenow(update, context):
     
     update.message.reply_text(current_time)    
     
-def morning(context:CallbackConext):
-    message="good morning"
-    context.bot.send_message(chad_id='888117682',text=message)
+#def morning(context:CallbackConext):
+ #   message="good morning"
+  #  context.bot.send_message(chad_id='888117682',text=message)
     
 def math(update, context):
     """Send a message when the command /math is issued."""
@@ -70,7 +70,7 @@ def main():
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("math", math))
     dp.add_handler(CommandHandler("timenow", timenow))
-    job_daily=j.run_daily(morning,days=(0,1,2,3,4,5,6),time=datetime.time(hour=14,minute=30,second=00))
+   # job_daily=j.run_daily(morning,days=(0,1,2,3,4,5,6),time=datetime.time(hour=14,minute=30,second=00))
 
 
     # on noncommand i.e message - echo the message on Telegram
