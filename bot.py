@@ -7,6 +7,7 @@ from datetime import datetime
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import os
+import pytz
 PORT = int(os.environ.get('PORT', 80))
 
 
@@ -26,7 +27,10 @@ def start(update, context):
 def timenow(update, context):
     """Send a message when the command /timenow is issued."""
     now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
+    tz = pytz.timezone('Asia/Kolkata')
+    your_now = now.astimezone(tz)
+    current_time = your_now.strftime("%H:%M:%S")
+    
     update.message.reply_text(current_time)    
     
 def math(update, context):
