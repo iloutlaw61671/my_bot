@@ -43,7 +43,7 @@ def math(update, context):
     """Send a message when the command /math is issued."""
     update.message.reply_text('http://imgur.com/a/VQkmm2U')
 
-def BEEE(update, context):
+def physics(update, context):
     """Send a message when the command /math is issued."""
     update.message.reply_text('https://drive.google.com/file/d/1ym8isX2eQBvjsGln_Yt11z5V7gxKxxSR/view?usp=sharing')    
     
@@ -74,7 +74,7 @@ def main():
     dp.add_handler(CommandHandler("help", help))
     dp.add_handler(CommandHandler("math", math))
     dp.add_handler(CommandHandler("timenow", timenow))
-    dp.add_handler(CommandHandler("BEEE", BEEE))
+    dp.add_handler(CommandHandler("physics", physics))
    # job_daily=j.run_daily(morning,days=(0,1,2,3,4,5,6),time=datetime.time(hour=14,minute=30,second=00))
 
 
