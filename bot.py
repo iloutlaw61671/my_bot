@@ -56,10 +56,10 @@ def login(update, context):
     update.message.reply_text('Let\'s log you in..')
     response1='Name'
     response2='Section'
-    bot.sendMessage(update.message.chat_id,
+    bot.send_message(update.message.chat_id,
                     response1)
     #name = update.message.text
-    bot.sendMessage(update.message.chat_id,
+    bot.send_message(update.message.chat_id,
                     response2)
     #section = update.message.text
     
