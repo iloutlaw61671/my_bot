@@ -94,7 +94,7 @@ def main():
     dp.add_handler(CommandHandler("login", login))
    # job_daily=j.run_daily(morning,days=(0,1,2,3,4,5,6),time=datetime.time(hour=14,minute=30,second=00))
 
-
+    
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
 
@@ -106,7 +106,7 @@ def main():
                           port=int(PORT),
                           url_path=TOKEN)
     updater.bot.setWebhook('https://tele-botvik.herokuapp.com/' + TOKEN)
-
+    bot.polling()
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
