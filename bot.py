@@ -54,9 +54,9 @@ def help(update, context):
 def login(update, context):
    
     update.message.reply_text('Let\'s log you in..')
-    
+    myname='Name'
     bot.sendMessage(chat_id=update.message.chat_id,
-                    text='Name')
+                    text=myname)
     #name = update.message.text
     bot.sendMessage(chat_id=update.message.chat_id,
                     text='Section')
