@@ -50,13 +50,13 @@ def help(update, context):
     """Send a message when the command /help is issued."""
     update.message.reply_text('Contact Vikram!')
 
-"""def login(update, context):
+def login(update, context):
    
     update.message.reply_text('Let\'s log you in..')
     
     bot.sendMessage(chat_id=update.message.chat_id,
                     text="Name")
-    name = update.message.text
+    """name = update.message.text
         bot.sendMessage(chat_id=update.message.chat_id,
                     text="Section")
     section = update.message.text"""
