@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+import telebot
 from datetime import datetime
 import logging
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
@@ -78,6 +79,7 @@ def main():
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
     updater = Updater(TOKEN, use_context=True)
+    bot = telebot.TeleBot(TOKEN)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
