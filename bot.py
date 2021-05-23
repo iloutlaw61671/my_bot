@@ -57,10 +57,10 @@ def login(update, context):
     
     bot.sendMessage(chat_id=update.message.chat_id,
                     text="Name")
-    name = update.message.text
+    #name = update.message.text
     bot.sendMessage(chat_id=update.message.chat_id,
                     text="Section")
-    section = update.message.text
+    #section = update.message.text
     
     
 
