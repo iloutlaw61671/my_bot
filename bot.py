@@ -52,7 +52,7 @@ def help(update, context):
     update.message.reply_text('Contact Vikram!')
 
 def login(update, context):
-   
+    bot = telebot.TeleBot(TOKEN)
     update.message.reply_text('Let\'s log you in..')
     response1='Name'
     response2='Section'
