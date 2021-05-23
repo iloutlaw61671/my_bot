@@ -20,8 +20,7 @@ logger = logging.getLogger(__name__)
 TOKEN = '1769553533:AAG6EI51jUJHwAVvYa12iXER7jRniQF_nNM'
 #j=updater.job_queue
 
-# Define a few command handlers. These usually take the two arguments update and
-# context. Error handlers also receive the raised TelegramError object in error.
+# Error handlers also receive the raised TelegramError object in error.
 def start(update, context):
     """Send a message when the command /start is issued."""
     update.message.reply_text('ECEbot at your service. Use / followed by sub name')
@@ -44,12 +43,25 @@ def math(update, context):
     update.message.reply_text('http://imgur.com/a/VQkmm2U')
 
 def physics(update, context):
-    """Send a message when the command /math is issued."""
+    """Send a message when the command /physics is issued."""
     update.message.reply_text('https://drive.google.com/file/d/1ym8isX2eQBvjsGln_Yt11z5V7gxKxxSR/view?usp=sharing')    
     
 def help(update, context):
     """Send a message when the command /help is issued."""
     update.message.reply_text('Contact Vikram!')
+
+def login(update, context):
+    """login info"""
+    update.message.reply_text('Let\'s log you in..')
+    
+    bot.sendMessage(chat_id=update.message.chat_id,
+                    text="Name")
+    name = update.message.text
+        bot.sendMessage(chat_id=update.message.chat_id,
+                    text="Section")
+    section = update.message.text
+    
+    
 
 def echo(update, context):
     """Echo the user message."""
@@ -75,6 +87,7 @@ def main():
     dp.add_handler(CommandHandler("math", math))
     dp.add_handler(CommandHandler("timenow", timenow))
     dp.add_handler(CommandHandler("physics", physics))
+    dp.add_handler(CommandHandler("login", login))
    # job_daily=j.run_daily(morning,days=(0,1,2,3,4,5,6),time=datetime.time(hour=14,minute=30,second=00))
 
 
