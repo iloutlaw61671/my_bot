@@ -58,10 +58,12 @@ def login(update, context):
     response2='Section'
     bot.send_message(update.message.chat_id,
                     response1)
-    #name = update.message.text
+    name = str(update.message.text).lower
     bot.send_message(update.message.chat_id,
                     response2)
-    #section = update.message.text
+    section = str(update.message.text).lower
+    response = "My name is {0} from section {1}".format(response1,response2)
+    update.message.reply_text(response)
     
     
 
